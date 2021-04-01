@@ -37,8 +37,8 @@ contract TinlakeSpellsTest is DSTest {
         // give spell permissions on root contract
         AuthLike(root_).rely(spell_);
 
-        ERC20Like dai = ERC20Like(SeniorTrancheLike(spell.SENIOR_TRANCHE()).currency());
-        uint daiBalance = dai.balanceOf(spell.SENIOR_TRANCHE());
+        ERC20Like dai = ERC20Like(SeniorTrancheLike(spell.seniorTranche_()).currency());
+        uint daiBalance = dai.balanceOf(spell.seniorTranche_());
 
         spell.cast();
 
